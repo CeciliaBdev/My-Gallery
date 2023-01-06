@@ -1,0 +1,107 @@
+.gallery_wrapper {
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: black;
+}
+.gallery {
+  border: 1px solid black;
+  /* height: 800px;
+  width: 600px; */
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(4, 100px);
+  gap: 10px;
+  background-color: black;
+}
+
+/* template grid */
+.gallery div:nth-child(1) {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.gallery div:nth-child(2) {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: yellow;
+}
+.gallery div:nth-child(3) {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: orange;
+}
+.gallery div:nth-child(4) {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: red;
+}
+.gallery div:nth-child(5) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  background-color: green;
+}
+.gallery div:nth-child(6) {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  background-color: blue;
+}
+.gallery div:nth-child(7) {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  background-color: turquoise;
+}
+.pictures img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lightbox_content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  max-height: 100vh;
+}
+.lightbox_gallery {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+.lightbox_gallery i {
+  font-size: 50px;
+  color: white;
+}
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+  margin: 30px;
+}
+.close i {
+  color: white;
+}
