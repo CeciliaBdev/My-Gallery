@@ -13,7 +13,7 @@ function Gallery() {
   }
   //   console.log('data', data.data)
   const Prev = () => {
-    console.log('click precedent')
+    // console.log('click precedent')
     const totalLength = data.length
     if (index === 0) {
       updateIndex(totalLength - 1)
@@ -30,7 +30,7 @@ function Gallery() {
     updateIndex(newIndex)
   }
   const Suiv = () => {
-    console.log('click suivant')
+    // console.log('click suivant')
     const totalLength = data.length
     if (index + 1 >= totalLength) {
       updateIndex(0)
@@ -46,6 +46,17 @@ function Gallery() {
     setClickedImg(newItem)
     updateIndex(newIndex)
   }
+  window.addEventListener('keyup', (event) => {
+    if (event.key === 'ArrowLeft') {
+      Prev()
+    }
+    if (event.key === 'ArrowRight') {
+      Suiv()
+    }
+    if (event.key === 'Escape') {
+      setClickedImg(null)
+    }
+  })
 
   return (
     <div className="gallery_wrapper">
@@ -55,7 +66,6 @@ function Gallery() {
             <img
               src={item.link}
               alt={item.text}
-              // width="200px"
               onClick={() => handleClick(item, index)}
             />
           </div>
